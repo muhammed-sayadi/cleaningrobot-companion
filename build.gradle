@@ -1,0 +1,45 @@
+group 'com.cleaningrobot'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.3.3.RELEASE'
+    }
+}
+
+apply plugin: 'war'
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+war {
+    baseName = 'cleaningrobotcompanion'
+    version =  '1.0.0'
+}
+
+sourceCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+    jcenter()
+    maven { url "http://repo.spring.io/libs-snapshot" }
+}
+
+configurations {
+    providedRuntime
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf:1.3.3.RELEASE'
+    compile 'org.hibernate:hibernate-core:5.1.0.Final'
+    compile 'org.webjars:bootstrap:3.2.0'
+    compile 'org.webjars:jquery:2.2.3'
+    compile 'mysql:mysql-connector-java:5.1.38'
+    compile 'javax.transaction:jta:1.1'
+    compile("org.springframework.boot:spring-boot-starter-web")
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+
+}
