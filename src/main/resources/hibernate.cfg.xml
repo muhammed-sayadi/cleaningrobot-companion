@@ -14,10 +14,10 @@
         </property>
 
         <property name="hibernate.connection.username">
-            root
+            USER_NAME
         </property>
         <property name="hibernate.connection.password">
-            12345678
+            ******
         </property>
 
         <!--
